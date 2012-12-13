@@ -45,8 +45,11 @@ The encryption algorithm written in php:
     ?> 
 info about encrypted string: 100 characters total. '\n' char every 20th char(except for last), 
 '-' separates every 3 chars(excluding \n), 'OEM' is 9-11 chars and '1.1' is 17-19 chars
+
 important: every 32 values, ('0x0' . subsrt($strPasswordMD5, $i%32,1)) repeats
+
 first $intMD5Total = (ascii value of first char of unencrypted string) + 
 (hexadecimal value of first character of MD5-encrypted pass) - arrEncryptedValues[0]
+
 second $intMD5Total = sum of [(first 16 chars of (MD5 of (ascii value of first char))  concatenated with 
-                      (first 16 characters of (MD5 of (first $intTotal)))]
+(first 16 characters of (MD5 of (first $intTotal)))]
